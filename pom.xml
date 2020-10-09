@@ -7,6 +7,9 @@
     <groupId>com.moxi</groupId>
     <artifactId>mogu_blog</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>mogu_utils</module>
+    </modules>
     <packaging>pom</packaging>
     <name>mogu_blog</name>
     <description>a blog web</description>
