@@ -32,6 +32,7 @@
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
+            <!--<version>1.10</version>-->
         </dependency>
         <!--Markdown 转 Html-->
         <dependency>
@@ -104,7 +105,15 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <!--<version>6.0.6</version>-->
             <scope>runtime</scope>
+        </dependency>
+
+        <!--图片压缩-->
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.8</version>
         </dependency>
     </dependencies>
 </project>
