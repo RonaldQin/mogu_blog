@@ -43,22 +43,6 @@ public class JsonUtils {
     }
 
     /**
-     * 将Object转换成Map
-     * @param obj
-     * @return
-     */
-    public static Map<String, Object> objectToMap(Object obj) {
-        try {
-            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
-            String json = gson.toJson(obj);
-            return jsonToMap(json);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
      * 把json字符串转化为对象
      *
      * @param jsonString
@@ -74,6 +58,41 @@ public class JsonUtils {
             e.printStackTrace();
         }
         return obj;
+    }
+
+    /**
+     * 将json结果集转化为对象
+     * @param jsonData
+     * @param beanType
+     * @param <T>
+     * @return
+     */
+    public static <T> T jsonToPojo(String jsonData, Class<T> beanType) {
+        try {
+            T t = MAPPER.readValue(jsonData, beanType);
+            return t;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 将json数据转换成pojo对象list
+     * @param jsonData
+     * @param beanType
+     * @param <T>
+     * @return
+     */
+    public static <T> List<T> jsonToList(String jsonData, Class<T> beanType) {
+        JavaType javaType = MAPPER.getTypeFactory().constructParametricType(List.class, beanType);
+        try {
+            List<T> list = MAPPER.readValue(jsonData, javaType);
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static ArrayList<?> jsonArrayToArrayList(String jsonArray) {
@@ -174,35 +193,16 @@ public class JsonUtils {
     }
 
     /**
-     * 将json结果集转化为对象
-     * @param jsonData
-     * @param beanType
-     * @param <T>
+     * 将Object转换成Map
+     * @param obj
      * @return
      */
-    public static <T> T jsonToPojo(String jsonData, Class<T> beanType) {
+    public static Map<String, Object> objectToMap(Object obj) {
         try {
-            T t = MAPPER.readValue(jsonData, beanType);
-            return t;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * 将json数据转换成pojo对象list
-     * @param jsonData
-     * @param beanType
-     * @param <T>
-     * @return
-     */
-    public static <T> List<T> jsonToList(String jsonData, Class<T> beanType) {
-        JavaType javaType = MAPPER.getTypeFactory().constructParametricType(List.class, beanType);
-        try {
-            List<T> list = MAPPER.readValue(jsonData, javaType);
-            return list;
-        } catch (Exception e) {
+            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+            String json = gson.toJson(obj);
+            return jsonToMap(json);
+        } catch(Exception e) {
             e.printStackTrace();
         }
         return null;

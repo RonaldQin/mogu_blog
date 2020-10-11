@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * 对字符串转换的一些操作
+ */
 @Slf4j
 public class StringUtils {
     private static int machineId = 1; // 集群号
