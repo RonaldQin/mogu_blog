@@ -1,9 +1,18 @@
 package com.moxi.mogublog.utils;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStreamReader;
+import lombok.extern.slf4j.Slf4j;
+import org.lionsoul.ip2region.DataBlock;
+import org.lionsoul.ip2region.DbConfig;
+import org.lionsoul.ip2region.DbSearcher;
+import org.lionsoul.ip2region.Util;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.*;
+import java.lang.reflect.Method;
+import java.net.HttpURLConnection;
 import java.net.InetAddress;
+import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -12,6 +21,7 @@ import java.util.regex.Pattern;
 /**
  * IP相关工具类
  */
+@Slf4j
 public class IpUtils {
     /**
      * 获取当前网络ip
