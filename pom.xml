@@ -9,6 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mogu_utils</module>
+        <module>mogu_eureka</module>
+        <module>mogu_gateway</module>
     </modules>
     <packaging>pom</packaging>
     <name>mogu_blog</name>
