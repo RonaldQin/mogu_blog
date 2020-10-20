@@ -11,6 +11,7 @@
         <module>mogu_utils</module>
         <module>mogu_eureka</module>
         <module>mogu_gateway</module>
+        <module>mogu_admin</module>
     </modules>
     <packaging>pom</packaging>
     <name>mogu_blog</name>
