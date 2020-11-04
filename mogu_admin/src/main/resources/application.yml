@@ -1,0 +1,47 @@
+server:
+  port: 8601
+
+# 阿里大于
+templateCode: SMS XXXXXX # 短信模板编号
+signName: 蘑菇博客
+# 项目名称
+PROJECT_NAME: 蘑菇博客
+
+file:
+  upload:
+    path: D:/workspaces/ideaworkspace-1/mogu_blog/data
+
+# 邮箱验证
+moguBlog:
+  email: mogublog@163.com
+
+# 蘑菇博客登录默认密码
+DEFAULT_PWD: mogu2018
+
+# 博客相关配置
+BLOG:
+  HOT_COUNT: 5 # 热门博客数量
+  NEW_COUNT: 15 # 最新博客数据
+  FIRST_COUNT: 5 # 一级推荐
+  SECOND_COUNT: 2 # 二级推荐
+  THIRD_COUNT: 3 # 三级推荐
+  FOURTH_COUNT: 5 # 四级推荐
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  jmx:
+    default-domain: mogu_admin
+  thymeleaf:
+    cache: true # 关闭缓存
+  application:
+    name: mogu-admin
+  security:
+    user:
+      name: user
+      password: password123
+
+
+# spring
